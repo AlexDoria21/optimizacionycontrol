@@ -1,5 +1,4 @@
 import MarketingCampain
-
 def convertToInt(dataset,index):
     for row in dataset:
         if len(row[index]) != 0:
@@ -26,7 +25,6 @@ def OneHotEncoding(dataset, cabecera, index):
                 x[i] = 1
                 break
         row[index: index+1] = x
-
 
 def CutYear(dataset, index):
     for row in dataset:
@@ -111,7 +109,7 @@ if __name__ == "__main__":
     for row in dataset:
         print(row)
     archivo = open("out.csv", "w")
-    archivo.write(",".join(header))
+    archivo.write(",".join(cabecera))
     archivo.write("\n")
     for row in dataset:
         for i in range(len(row)):

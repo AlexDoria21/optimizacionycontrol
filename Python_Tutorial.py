@@ -126,16 +126,6 @@ for numero in range(1, 5):
     print (numero)
 print("-----------------------------------------")
 color = input("Ingrese un color: ")
-match  color:
-     case   "verde":
-         print("El color es verde")
-     case   "rojo":
-         print("El clor es rojo")
-     case   "azul":
-         print("El color es azul")
-     case _:
-         print("No se a encontrado el color")
-
 #listas
 lista = [29, True, 3.1416, "Hola me llamo efrain"]
 lista[2] = [1,2,3]
@@ -166,6 +156,10 @@ lista_nueva.sort()#Aqui la funcion sort acomoda de manera ascendente los termino
 print(lista_nueva)
 lista_nueva.sort(reverse=True) #Aqui ordena los numero enteros pero ahora de manera descendente
 print(lista_nueva)
+#del statement
+StatDel = [1, 6, 8, 10, 90]
+del StatDel[0:3]
+print(StatDel)
 #Tuplas
 tuple = (4,"hola",6.50,[1,2,3],5)#La tupla es semejante a la lista solo que la tupla no se puede modificar en lo absoluto
 print(tuple)
@@ -180,3 +174,40 @@ conjunto.discard(2)#Aqui si elimina el elemento seleccionado
 print(conjunto)
 conjunto.clear()
 print(conjunto)
+#Diccionarios
+diccionario = {"azul":"blue", "rojo":"red", "verde":"green"}
+#El diccionario solo se usa con llaves ya que automaticamente al ponerlas python sabe que estamos hablando de un diccionario
+print(diccionario["azul"]) #Aqui se imprime el significado o el valor que le dimos en el diccionario a dicha palabra
+diccionario["amarillo"] = "yellow" #Aqui estamos agregando otro valo adentro del diccionario
+#tambien podriamos modificar elementos ya establecidos del diccionario con el metodo de agregar de la liena 191
+del(diccionario["verde"])#Aqui estariamos eleminando todo lo de la clabe seleccionada en este caso todo lo que este adentro de verde
+diccionario2 = {"Alejandro":{"edad":22, "estatura": 1.78},"Maria":[21, 1.64]}#Aqui agregamos un diccionario adentro de otro diccionario en esta caso de alejandro tiene otro diccionario que tiene edad y estatura
+#ITEMS()
+diccionario2.items()#aqui se mostraria los items que tendria adentro de mi diccionario pero seria tuplas
+list(diccionario2.items())#haciedo una lista al diccionario ya podra acceder y modificar cada item
+#ENUMARATE
+frutas = ["manzana", "naranja", "melon", "sandia", "platano"]
+for elemento in enumerate(frutas):
+    print(elemento)
+#zip #Junta las listas las combina entre si
+nms = ("alejandro", "Efrain", "Alan")
+cmp = ("Amazon", "Apple", "Dell")
+zipped = list(zip(nms,cmp))
+print(zipped)
+#reversed
+vocales = ("a", "e", "i", "o", "u")
+vocales.__reversed__()
+print(f"\nLista :{vocales}")
+#Sorted
+canasta = ["manzana", "narnaja", "sandia", "limon", "uva"]
+for a in sorted(canasta):
+    print(a)
+canasta1 = ["manzana", "narnaja", "sandia", "limon", "uva", "naranja", "sandia"]
+for f in sorted(set(canasta1)):
+    print(f)
+
+
+
+
+
+
