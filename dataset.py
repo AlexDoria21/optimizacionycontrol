@@ -12,8 +12,10 @@ def convertToFloat(dataset,index):
         else:
             row[index]  = 0
 
+dataset = []
+#cabecera = []
+
 archivo = open("survey lung cancer.csv", "r")
 for linea in archivo:
-    linea = linea.strip()
-    linea = linea.split("\t")
+    linea = linea.strip().split(",")
     print(linea)
