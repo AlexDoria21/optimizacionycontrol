@@ -1,9 +1,9 @@
 def convertToInt(dataset,index):
     for row in dataset:
         if len(row[index]) != 0:
-           row[index] = int(row[index])
+            row[index] = int(row[index])
         else:
-           row[index] = 0
+            row[index] = 0
 
 def convertToFloat(dataset,index):
     for row in dataset:
