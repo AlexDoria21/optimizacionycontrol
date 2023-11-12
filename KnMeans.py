@@ -17,9 +17,10 @@ def ActualizaCent(dataset,grupos,cent):
     for i in range(len(grupos)):
         for j in range(len(dataset[i])):
             cent[grupos[i]][j] += dataset[i][j]
-            cont[grupos[i]] += 1
-    for  i in range(len(cent[i])):
-        cent[i][j] /= cont[i]
+        cont[grupos[i]] += 1
+    for  i in range(len(cent)):
+        for j  in range(len(cent[i])):
+         cent[i][j] /= cont[i]
 
 def CalcDist(point, centroide):
     total = 0
