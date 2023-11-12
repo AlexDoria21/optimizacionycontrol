@@ -44,8 +44,8 @@ def Graph(dsT, grupos, centroides = None):
     grupColor = [e * 50 for e in grupos]
     fig, ax = plt.subplots()
     ax.scatter(dsT[0], dsT[1], c=grupColor)
-    CT = list(zip(+centroides))
-    ax.scatter(CT[0], CT[3], color="red")
+    CT = list(zip(*centroides))
+    ax.scatter(CT[0], CT[1], color="red")
     plt.show()
     plt.close()
 
@@ -72,7 +72,7 @@ if __name__ == "__main__":
         for j in range(len(dsT)):
             cent[i][j] = random.randint(minim[j],maxim[j])
     grupos = [0 for i in dataset]
-    cont = [0 for i in range[k]]
+    cont = [0 for i in range(k)]
     CalculaGrupos(dataset, cent, grupos)
     Graph(dsT,grupos,cent)
     ActualizaCent(dataset, grupos, cent)
