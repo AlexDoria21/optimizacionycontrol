@@ -1,5 +1,5 @@
 # optimizacionycontrol
  
-###HOLA DORIA
+# HOLA DORIA
 
-- :sonrisa:
+¯\_(ツ)_/¯
