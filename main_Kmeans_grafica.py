@@ -56,7 +56,7 @@ def calcGrupos(datas, cent, grupos):
     return c
 
 if __name__ == '__main__':
-    file = open("Compound.txt", "r")
+    file = open("doria_data.csv", "r")
     datas = []
     origG = []
     k = 3
