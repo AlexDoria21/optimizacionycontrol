@@ -3,18 +3,18 @@ import random as rand
 import numpy as np
 import os
 
-if __name__ == '__main__':  
-    archivos = os.listdir("")
+if __name__ == "__main__":  
+    archivos = os.listdir("TSP Instances")
     for archivo in archivos:
         #region Inicializa Variables
-        n=10
+        n = 10
         pop_size=200
         p = [[i for i in range(n)] for j in range(int(pop_size/2))]
         vo = [0 for i in range(pop_size)]
         vivos = [False for i in range(pop_size)]
         #endregion
         #region Lectura de Instancia
-        file = open("/{0}".format(archivo),"r")
+        file = open("TSP Instances/{0}".format(archivo),"r")
         file.readline()
         file.readline()
         file.readline()
@@ -29,7 +29,7 @@ if __name__ == '__main__':
             for j in range(i+1,n):
                 graph[i][j] = int(math.sqrt((cities[i][0]-cities[j][0])**2+(cities[i][1]-cities[j][1])**2))
                 graph[j][i] = graph[i][j]
-        n = 10          
+        n = 10         
         #endregion
         #region Inicializa Poblacion
         for i in range(len(p)):

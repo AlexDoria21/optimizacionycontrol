@@ -3,6 +3,7 @@ TYPE: TSP
 COMMENT: 70-city problem (Smith/Thompson)
 DIMENSION: 70
 EDGE_WEIGHT_TYPE : EUC_2D
+TYPE : TSP
 1 64 96
 2 80 39
 3 69 23

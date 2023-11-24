@@ -1,8 +1,9 @@
 NAME : uy734
 COMMENT : 734 locations in Uruguay
 COMMENT : Derived from National Imagery and Mapping Agency data
-TYPE : TSP
 DIMENSION : 734
+TYPE : TSP
+TYPE : TSP
 1 -30133.3333 -57633.3333
 2 -30166.6667 -57100.0000
 3 -30233.3333 -57583.3333

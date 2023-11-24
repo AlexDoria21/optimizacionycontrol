@@ -1,8 +1,9 @@
 NAME : qa194
 COMMENT : 194 locations in Qatar
 COMMENT : Derived from National Imagery and Mapping Agency data
-TYPE : TSP
 DIMENSION : 194
+TYPE : TSP
+TYPE : TSP
 1 24748.3333 50840.0000
 2 24758.8889 51211.9444
 3 24827.2222 51394.7222
