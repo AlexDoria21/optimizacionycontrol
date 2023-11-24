@@ -1,3 +1,4 @@
+from shutil import copyfile
 age = 20
 price = 19.20
 print (age)
@@ -205,9 +206,26 @@ for a in sorted(canasta):
 canasta1 = ["manzana", "narnaja", "sandia", "limon", "uva", "naranja", "sandia"]
 for f in sorted(set(canasta1)):
     print(f)
+ruta = "C:\Users\EFRAIN ORTIZ\Documents\GitHub\optimizacionycontrol"
+archivo = open(ruta,    "r") #Aqui se abre el archivo
+print(archivo.read()) #Aqui se lee el archivo
+print(archivo.readline()) #Aqui se lee una linea del archivo
+print(archivo.readlines()) #Aqui se lee todas las lineas del archivo
+archivo.close() #Aqui se cierra el archivo
+contenido = "Hola me llamo efrain"
+nueva_ruta = "C:\Users\EFRAIN ORTIZ\Documents\GitHub\optimizacionycontrol\archivo.txt"
+archivo = open(nueva_ruta, "r+") #Aqui se abre el archivo
+archivo.write(contenido) #Aqui se escribe en el archivo
+archivo.seek(0) #Aqui se mueve el cursor al inicio del archivo
+print(archivo.read()) #Aqui se lee el archivo
+copyfile("C:\Users\EFRAIN ORTIZ\Documents\GitHub\optimizacionycontrol\archivo.txt", "C:\Users\EFRAIN ORTIZ\Documents\GitHub\optimizacionycontrol\archivo2.txt") #Aqui se copia el archivo
+def establecer_archivo(ruta, permiso):
+    archivo = open(ruta, permiso)
+    return archivo
 
+def leer_archivo(archivo):
+    contenido = archivo.read()
+    return contenido
 
-
-
-
-
+def escribir_archivo(archivo, texto):
+    archivo.write(texto) 
