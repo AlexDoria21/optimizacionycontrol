@@ -44,46 +44,45 @@ if __name__ == '__main__':
             for i in range(pop_size):
                 if vivos[i] == False:
                     p1 = rand.randint(0, int(pop_size/2))
-                    while (vivos[p1] == False):
+                    while(vivos[p1] == False):
                         p1 = rand.randint(0, int(pop_size/2))
-                p2 = rand.randint(0, int(pop_size/2))
-                while (vivos[p2] == False or p2 == p1):
-                    p2 = rand.randint(0, int(pop_size/2))
-                rani = rand.randint(0, n)
-                ranf = rand.randint(0, n)
-                while rani > ranf or rani == ranf:
-                    if ranf == 0:
-                        ranf = rand.randint(0, n-1)
-                    rani = rand.randint(0, n-1)
-                x = [0 for j in range(n)]
-                for j in range (n):
-                    p[i][j] = -1
-                for j in range(rani, ranf):
-                    p[i][j] = p[p1][j]
-                    x[p[p1][j]] = 1
-                k = 0
-                for j in range(n):
-                    while k < n and p[i][k] != -1:
-                        k += 1
-                    if x[p[p2][j]] == 0:
-                        p[i][k] = p[p2][j]
-                        k += 1
-                vivos[i] = True
-        for i in range(pop_size):
-            vo[i] = 0
-            for j in range(n-1):
-                vo += graph[p[i][j]][p[i][j+1]]
-            vo[i] += graph[p[i][n-1]][p[i][0]]
-        if min(vo) < minVo:
-            minVo = min(vo)
-            iSinM = 10
-        voprom = np.average
-        contm = 0
-        for i in range(pop_size):
-            if vo[i] >= voprom:
-                vivos[i] = False
-                contm += 1
-                if contm == limM:
-                    break
-    print('Archivo: {0} - Mejor Valor = {1}'.format(files, minVo))
-                    
+                    p2 = rand.randint(0,int(pop_size/2))
+                    while(vivos[p2] == False or p2 == p1):
+                        p2 = rand.randint(0,int(pop_size/2))
+                    rani = rand.randint(0,n)
+                    ranf = rand.randint(rani,n)
+                    while rani > ranf or rani == ranf:
+                        if ranf == 0:
+                            ranf = rand.randint(rani,n-1)
+                        rani = rand.randint(0,n-1)
+                    x = [0 for j in range(n)]
+                    for j in range(n):
+                        p[i][j]  =-1
+                    for j in range (rani,ranf):
+                        p[i][j] = p[p1][j]
+                        x[p[p1][j]] = 1
+                    k = 0
+                    for j in range (n):
+                        while k< n and p[i][k] != -1:
+                            k+=1
+                        if x[p[p2][j]] == 0:
+                            p[i][k] = p[p2][j]
+                            k+=1
+                    vivos[i] = True  
+            for i in range(pop_size):
+                vo[i] = 0
+                for j in range(n-1):
+                    vo[i] += graph[p[i][j]][p[i][j+1]]
+                vo[i] += graph[p[i][-1]][p[i][0]]
+            if min(vo) < minVo:
+                minVo = min(vo)
+                iSinM = 10
+            voprom = np.average(vo)
+            contm = 0 
+            for i in range (pop_size):
+                if vo[i] >= voprom:
+                    vivos = False
+                    contm += 1
+                    if contm >= limM:
+                        break
+        print("Archivo: {0} - Mejor Valor = {1}".format(files,minVo))            
