@@ -81,7 +81,7 @@ if __name__ == '__main__':
             contm = 0 
             for i in range (pop_size):
                 if vo[i] >= voprom:
-                    vivos = False
+                    vivos[i] = False
                     contm += 1
                     if contm >= limM:
                         break

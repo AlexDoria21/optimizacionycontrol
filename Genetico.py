@@ -76,15 +76,14 @@ if __name__ == "__main__":
                         if seleccionados[p[p2][j1]] == 0:
                             p[i][j2] = p[p2][j1]
                             j2 += 1
-            for i in range(pop_size):
-                vivos[i] = True    
+                    vivos[i] = True    
             #endregion
             #region Evaluacion y Seleccion Elitista
             for i in range(pop_size):
                 vo[i] = 0
                 for j in range(n-1):
                     vo[i] += graph[p[i][j]][p[i][j+1]]
-                vo[i] += graph[p[i][1]][p[i][0]]  
+                vo[i] += graph[p[i][-1]][p[i][0]]  
             minActual = min(vo)
             if minActual < BestGlobal:
                 BestGlobal = minActual
