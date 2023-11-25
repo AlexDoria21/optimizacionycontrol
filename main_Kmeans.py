@@ -47,7 +47,7 @@ if __name__ == '__main__':
     datas = []
     k = 7
 
-    file = open("Absenteeism_out.csv", "r")
+    file = open("doria_data.csv", "r")
     for l in file:
         e = l.strip().split(',')
         datas.append(e)

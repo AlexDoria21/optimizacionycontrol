@@ -8,6 +8,7 @@ if __name__ == "__main__":
     for archivo in archivos:
         #region Inicializa Variables
         pop_size=200
+        n = 10
         p = [[i for i in range(n)] for j in range(int(pop_size/2))]
         vo = [0 for i in range(pop_size)]
         vivos = [False for i in range(pop_size)]
@@ -17,7 +18,7 @@ if __name__ == "__main__":
         file.readline()
         file.readline()
         file.readline()
-        n = int(file.readline().split(":")[1])
+        n = int(file.readline().strip().split(":")[1])
         file.readline()
         file.readline()
         cities = np.zeros((n,2))

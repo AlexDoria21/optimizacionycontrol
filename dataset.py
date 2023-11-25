@@ -58,6 +58,17 @@ def Esta(datas, index):
     for row in datas:
         row[index] = round((row[index] - xPrima) / sigma, 2)
 
+def read_data(file_path):
+    datas = []
+    with open(file_path, 'r') as file:
+        for i, line in enumerate(file):
+            line = line.strip().split(",")
+            if i == 0:  # Header line, leave as is
+                datas.append(line)
+            else:
+                datas.append([int(value) if value.isdigit() else value for value in line])
+    return datas
+
 if __name__ == '__main__':
     file = open("survey lung cancer.csv", "r")
     datas = []
