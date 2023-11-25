@@ -7,7 +7,6 @@ if __name__ == "__main__":
     archivos = os.listdir("TSP Instances")
     for archivo in archivos:
         #region Inicializa Variables
-        n = 10
         pop_size=200
         p = [[i for i in range(n)] for j in range(int(pop_size/2))]
         vo = [0 for i in range(pop_size)]
